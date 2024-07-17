@@ -6,4 +6,10 @@
 <form method="GET" action="{% url 'home' %}">
     <input type="text" name="q" placeholder="Wyszukaj Pokoje">
 </form>
+
+{% if request.user.is_authenticated %}
+<a href="{% url 'logout' %}"> Wyloguj</a>
+{% else %}
+<a href="{% url 'login' %}"> Zaloguj </a>
 <hr>
+{% endif %}
